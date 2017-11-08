@@ -1,0 +1,315 @@
+.sync_detail_metabox p label { min-width:120px; width:120px; display:inline-block; float:left; line-height:22px; font-weight:bold; }
+.sync_detail_metabox p span.help { color:#666; font-style:italic; font-size:80%; }
+.ms-container{
+  background: transparent url('../images/switch.png') no-repeat 50% 50%;
+  width: 100%;
+}
+
+.te_main_heading {
+	
+	margin-top: 15px;
+	padding: 10px;
+	background-color: #0074a2;
+	color:#fff;
+	font-size: 17px;
+}
+.te-websites-wrap {
+	padding: 0px; 
+	margin:15px 0px 0px 0px;
+	width: 97%;
+}
+.ms-container:after{
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  clear: both;
+  min-height: 0;
+  visibility: hidden;
+}
+
+.ms-container .ms-selectable, .ms-container .ms-selection{
+  background: #fff;
+  color: #555555;
+  float: left;
+  width: 45%;
+}
+.ms-container .ms-selection{
+  float: right;
+}
+
+.ms-container .ms-list{
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  height: 250px;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+.ms-container .ms-list.ms-focus{
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted \9;
+}
+
+.ms-container ul{
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.ms-container .ms-optgroup-container{
+  width: 100%;
+}
+
+.ms-container .ms-optgroup-label{
+  margin: 0;
+  padding: 5px 0px 0px 5px;
+  cursor: pointer;
+  color: #999;
+  font-size: 14px;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable,
+.ms-container .ms-selection li.ms-elem-selection{
+  border-bottom: 1px #eee solid;
+  padding: 2px 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.ms-container .ms-selectable li.ms-hover,
+.ms-container .ms-selection li.ms-hover{
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  background-color: #08c;
+}
+
+.ms-container .ms-selectable li.disabled,
+.ms-container .ms-selection li.disabled{
+  background-color: #eee;
+  color: #aaa;
+  cursor: text;
+}
+
+#website_table {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-collapse: separate;
+    border-color: #dddddd #dddddd #dddddd -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0;
+	width: 100%;
+	box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background-color:transparent;
+}
+
+#website_table tbody  tr:nth-child(2n+1)  td, #website_table tbody  tr:nth-child(2n+1)  th {
+	background-color:#f9f9f9;
+	
+}
+
+#website_table tbody  tr:nth-child(2n+1).inactive_offr  td, #website_table tbody  tr:nth-child(2n+1).inactive_offr  th {
+	background-color:#CCC !important;
+}
+#website_table  tr  th {
+ 	border-bottom:1px solid #666;
+	border-top:1px solid #666;
+}
+
+#website_table tr.inactive_offr,#website_table tr.inactive_offr td {
+	font-weight:normal !important;
+	background-color:#CCC !important;
+}
+#website_table  tr  th,#website_table tbody  tr  td{
+	
+    line-height: 20px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+#website_table tbody  tr  td {
+	border-top: 1px solid #dddddd;
+}
+
+.add-new {
+	background:none repeat scroll 0 0 #e0e0e0;
+	border: 0 none;
+    border-radius: 2px;
+    font-size: 13px;
+    margin-left: 4px;
+    padding: 4px 8px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: none;
+	color:#333;
+	font-weight:normal;
+	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.add-new:hover {
+background: none repeat scroll 0 0 #2ea2cc;
+    color: #fff;
+	}
+	
+.btn-success {
+	background:#71C371 !important;
+	color:#FFF !important;
+}
+.btn-primary {
+	background:#2ea2cc !important;
+	color:#FFF !important;
+}
+.btn-warning {
+	background:#f89406 !important;
+	color:#FFF !important;
+}
+.btn-danger {
+	background:#bd362f !important;
+	color:#FFF !important;
+}
+.te-btn-groups form {
+	float:left;
+	display:inline-block;
+}
+
+.te-websites-wrap .te-title-bar{
+	background: none repeat scroll 0 0 #2980b9;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	float: left;
+	font-size: 16px;
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+	position:relative;
+	color: #FFF;
+}
+
+
+
+.te-websites-wrap .te-title-bar #cancel-new-website-btn {
+	position:absolute;
+	top:7px;
+	right:5px;
+	background-image:url(../images/cross.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	display:inline-block;
+	height:20px;
+	width:20px;
+	
+}
+
+.te-websites-wrap .te-panel-box{
+	background: none repeat scroll 0 0 #FFF;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	border-left:1px solid #A7C8EA;
+	border-bottom:1px solid #A7C8EA;
+	border-right:1px solid #A7C8EA;
+	float:left;
+	margin-top: 0;
+	padding: 10px;
+	width: 100%;
+	position:relative;
+}
+
+
+.te-websites-wrap .add-new-website {
+	margin: 0 auto 15px auto;
+	width: 100%;
+	max-width:600px;
+}
+
+
+.te-websites-wrap .add-new-website .te-panel-box {
+	padding:15px;
+	background:#f6f6f6;
+	
+}
+
+.te-websites-wrap .add-new-website .te-form-control {
+	
+}
+.te-websites-wrap .add-new-website label.te-label{
+	margin-bottom:3px;
+	font-size:14px;
+	display:block;
+}
+.te-websites-wrap .add-new-website .te-form-control input{
+	width:100%;
+	padding:10px;
+	
+	margin-bottom:10px;
+	transition:border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.te-websites-wrap .add-new-website .te-form-control input:focus{
+
+	box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+	border-color: rgba(82, 168, 236, 0.8);
+}
+.te-websites-wrap .add-new-website .save-website-btn { 
+	background: none repeat scroll 0 0 #2ea2cc;
+	border: medium none;
+	color: #fff;
+	cursor: pointer;
+	height: auto;
+	margin: 15px auto 0px auto;
+	padding: 10px;
+	width: 100%;
+}
+.top-btn-div {
+	margin:auto !important;
+	width:100%;
+	max-width:300px;
+	text-align:center;
+}
+
+.te-large-btn {
+	max-width:100%;
+	width:200px;
+	display:inline-block;
+	padding:10px !important;
+}
+
+.te-message {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin-left:0 !important;
+	margin-right:0 !important;
+	width:97% !important;
+}
+
+.te-error-span {
+	color:#C00;
+}
