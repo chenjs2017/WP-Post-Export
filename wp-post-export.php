@@ -561,13 +561,19 @@ if (!class_exists('wp_post_export')) {
 	            'posts_per_page' => -1,
 	            'post_parent' => $post_id
 	        ) );
+			$val = $this->sync_one_post($url, $pass, $post_id);
+			if ($val != true) {
+				return $val;
+			}
 			if ( $attachments ) {
 	            foreach ( $attachments as $attachment )
 				{
-					$this->sync_one_post($url, $pass, $attachment->ID);
+					$val = $this->sync_one_post($url, $pass, $attachment->ID);
+					if ($val != true) {
+						return $val;
+					}
 				}
 			}
-			$this->sync_one_post($url, $pass, $post_id);
 		}
 
 
@@ -577,24 +583,28 @@ if (!class_exists('wp_post_export')) {
             $post = get_post($post_id, ARRAY_A);
             $post_type = $post['post_type'];
 
-			//for attachment, only body and post_type are required
-			$body['post'] = $post;
-			$body['post_type'] = $post_type;
-			$body['passkey'] = $pass;
-
-			//get post meta
+						//get post meta
 			$post_meta = get_post_meta($post_id);
 			unset($post_meta['remote_post_id']);
 
-			if ($post_type != 'attachment') {
-
-				$remote_post_ids = get_post_meta($post_id, 'remote_post_id', true);
+			$remote_post_ids = get_post_meta($post_id, 'remote_post_id', true);
+			if ($remote_post_ids) {
+				if (!empty($remote_post_ids[$this->__get_key($url)])) {
+					$post_meta['remote_post_id'][0] = $remote_post_ids[$this->__get_key($url)];
+				}
+			}
+	
+			if ($post_type == 'attachment') {
+				$remote_post_ids = get_post_meta($post['post_parent'], 'remote_post_id', true);
+				$post['remote_post_ids'] = $remote_post_ids;	
 				if ($remote_post_ids) {
 					if (!empty($remote_post_ids[$this->__get_key($url)])) {
-						$post_meta['remote_post_id'][0] = $remote_post_ids[$this->__get_key($url)];
+						$post['post_parent'] = $remote_post_ids[$this->__get_key($url)];
 					}
 				}
-					//get custom taxonmies registered against this post type
+				
+			} else {
+				//get custom taxonmies registered against this post type
 				$taxonomies = get_object_taxonomies($post_type, 'objects');
 				$post_taxonomies_cats = array();
 				$post_taxonomies_tags = array();
@@ -622,6 +632,8 @@ if (!class_exists('wp_post_export')) {
 					}
 
 				}
+				$body['post_taxonomies_cats'] = $post_taxonomies_cats;
+	            $body['post_taxonomies_tags'] = $post_taxonomies_tags;
 			}
 			//remove the things we don't need
 			unset($post['guid']);
@@ -631,7 +643,9 @@ if (!class_exists('wp_post_export')) {
 			unset($post_meta['_encloseme']);
 			//jschen
 			//	unset($post_meta['_thumbnail_id']);
-
+			$body['post'] = $post;
+			$body['post_type'] = $post_type;
+			$body['passkey'] = $pass;
 			$body['post_meta'] = $post_meta;
 						
             //p_rr( $body );
